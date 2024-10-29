@@ -131,15 +131,21 @@ const awardData = [
   {
     iconUrl: '/images/icons/award.svg',
     title: 'Transforming Healthcare Delivery',
+    subTitle:'We aim to revolutionize the way healthcare is accessed and delivered, ensuring that innovative solutions meet the evolving needs of our patients and communities.'
   },
-  { iconUrl: '/images/icons/award.svg', title: 'Empowering Patients' },
+  { iconUrl: '/images/icons/award.svg',
+   title: 'Empowering Patients' ,
+   subTitle:'Our mission is to empower individuals with the tools, knowledge, and support they need to take control of their health and wellness, fostering a proactive approach to healthcare.'
+  },
   {
     iconUrl: '/images/icons/award.svg',
     title: 'Commitment to Excellence',
+    subTitle:'We are dedicated to achieving excellence in all our services, striving for the highest standards of quality, compassion, and efficiency in patient care.'
   },
   {
     iconUrl: '/images/icons/award.svg',
     title: 'Building a Healthier Community',
+    subTitle:'Through collaboration and community engagement, we envision a healthier future where every individual has access to comprehensive, personalized healthcare solutions.'
   },
 ];
 
@@ -201,7 +207,7 @@ export default function About() {
         bottomXl={110}
       >
         <AwardSectionStyle2
-          sectionTitle="Winning Awards and <br />Recognition"
+          sectionTitle="Our Vision for a Healthier Tomorrow"
           sectionTitleUp="Our Mission and Vision"
           sectionSubTitle="We have been recognized for our commitment to <br />excellence in healthcare."
           data={awardData}

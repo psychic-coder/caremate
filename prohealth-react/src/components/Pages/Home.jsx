@@ -34,7 +34,7 @@ const featureListData = [
     iconSrc: "/images/home_1/respect.svg",
     title: "Respect",
     subTitle:
-      "We honor the dignity and uniqueness of every individual, fostering an atmosphere of kindness and understanding, regardless of background or beliefs.",
+      "We honor the dignity and uniqueness of every individual,fostering an atmosphere of kindness and understanding, regardless of background or beliefs.",
   },
   {
     iconSrc: "/images/home_1/teamwork.svg",
