@@ -21,7 +21,7 @@ export default function DoctorDetails() {
           description="AI-Powered Mental Health Support
           Our Therapy Assistant leverages advanced AI and natural language processing to provide compassionate, personalized mental health support tailored to individual needs."
           social={[
-            { icon: '/images/launch1.png', href: '/about' },
+            { icon: 'Launch', href: '/about',variant:'' },
           ]}
           contactInfo={[
             { iconUrl: '/images/icons/call.svg', title: '+123+456-7890' },

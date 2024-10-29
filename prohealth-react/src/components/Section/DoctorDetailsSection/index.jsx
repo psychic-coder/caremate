@@ -1,10 +1,10 @@
-import { Icon } from '@iconify/react';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import List from '../../List';
-import ListStyle3 from '../../List/ListStyle3';
-import ListStyle2 from '../../List/ListStyle2';
-import Spacing from '../../Spacing';
+import { Icon } from "@iconify/react";
+import React from "react";
+import { Link } from "react-router-dom";
+import List from "../../List";
+import ListStyle3 from "../../List/ListStyle3";
+import ListStyle2 from "../../List/ListStyle2";
+import Spacing from "../../Spacing";
 
 export default function DoctorDetailsSection({
   bgUrl,
@@ -24,7 +24,10 @@ export default function DoctorDetailsSection({
   awardHeading,
   schedules,
   scheduleHeading,
-}) {
+})
+
+{
+  // let variant="";
   return (
     <div className="cs_doctor_details">
       <div
@@ -63,10 +66,11 @@ export default function DoctorDetailsSection({
             <h3 className="cs_semibold cs_fs_24 mb-0">{designation}</h3>
             <Spacing md="32" />
             <p className="mb-0 cs_heading_color">{description}</p>
-            <div className="cs_social_links cs_accent_bg cs_radius_15">
+            {/* <div className="cs_social_links cs_accent_bg cs_radius_15"> */}
+            <div>
               {social?.map((item, index) => (
-                <Link to={item.href} key={index}>
-                  <Icon icon={item.icon} />
+                <Link to={item.href} key={index} className={`cs_btn cs_style_1 ${item.variant}`}>
+                  <span>{item.icon}</span>
                 </Link>
               ))}
             </div>
