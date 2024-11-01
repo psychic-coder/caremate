@@ -77,9 +77,9 @@ const HospitalManagementSystem = () => {
   });
 
   return (
-    <div className="p-4 max-w-7xl mx-auto" style={{ width: '70%' }}>
+    <div className=" max-w-7xl mx-auto " style={{ width: '70%',marginTop:"7rem" }}>
     
-        <Card className="mb-6 mt-4">
+        <Card className="mb-6 m-20">
           <CardHeader className="text-[#252b61]">
             <CardTitle>Hospital Locations</CardTitle>
           </CardHeader>
@@ -101,7 +101,7 @@ const HospitalManagementSystem = () => {
         </Card>
 
         {/* Hospital Table */}
-      <Card className="mb-6">
+      <Card className="mb-6 overflow-x-auto">
         <CardHeader className="text-[#252b61]">
           <CardTitle>Hospital Availability</CardTitle>
         </CardHeader>
