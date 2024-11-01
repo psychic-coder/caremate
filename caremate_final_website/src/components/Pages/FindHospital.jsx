@@ -98,7 +98,7 @@ const OPDSQueueModel = () => {
   );
 
   return (
-    <div className="p-6 max-w-screen mx-auto bg-gray-100 min-h-screen pt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " style={{marginTop:"8rem"}}>
+    <div className="p-6 max-w-screen mx-auto bg-gray-100 min-h-screen pt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " style={{marginTop:"8rem",marginBottom:"5rem"}}>
       
       <Card className="bg-white shadow-lg mb-6">
         <CardHeader className="text-[#252b61]">
@@ -198,11 +198,11 @@ const OPDSQueueModel = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4  ">
                 {queueData.map((spec) => (
-                  <Card key={spec.name} className="bg-gray-50 shadow-md">
+                  <Card key={spec.name} className="bg-gray-50 shadow-md overflow-x-auto">
                     <CardHeader className="bg-gray-200">
-                      <CardTitle >{spec.name}</CardTitle>
+                      <CardTitle>{spec.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="flex items-center text-gray-800">
