@@ -120,7 +120,7 @@ export default function DepartmentDetails() {
           Our Medical Assistant is here to make healthcare more accessible. Simply share your health concerns, and the Medical Assistant will provide helpful insights, offer preliminary advice, and even book an appointment for you with the right doctor."
           imgUrl="https://prohealth-react.vercel.app/images/departments/department_img_1.png"
         />
-        <Button style="margin-right:5rem" btnUrl={"https://www.google.co.in/"} btnText={"Chatbot"} variant={""}/>
+        <Button style={{marginRight:"5rem"}} btnUrl={"https://www.google.co.in/"} btnText={"Chatbot"} variant={""}/>
       </Section>
 
       <Section topMd={170} topLg={145} topXl={90}>
