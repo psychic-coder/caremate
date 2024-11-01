@@ -101,7 +101,7 @@ const HospitalManagementSystem = () => {
         </Card>
 
         {/* Hospital Table */}
-      <Card className="mb-6 overflow-x-auto">
+      <Card className="mb-20 overflow-x-auto ">
         <CardHeader className="text-[#252b61]">
           <CardTitle>Hospital Availability</CardTitle>
         </CardHeader>

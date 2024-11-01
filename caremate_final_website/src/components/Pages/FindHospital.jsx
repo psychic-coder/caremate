@@ -98,14 +98,14 @@ const OPDSQueueModel = () => {
   );
 
   return (
-    <div className="p-6 max-w-7xl mx-auto bg-gray-100 min-h-screen pt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="p-6 max-w-screen mx-auto bg-gray-100 min-h-screen pt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " style={{marginTop:"8rem"}}>
       
       <Card className="bg-white shadow-lg mb-6">
         <CardHeader className="text-[#252b61]">
           <CardTitle>Select Hospital</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="relative">
+          <div className="relative  overflow-x-auto">
             <select
               value={selectedHospital.id}
               onChange={(e) =>
@@ -113,7 +113,7 @@ const OPDSQueueModel = () => {
                   hospitals.find((h) => h.id === parseInt(e.target.value))
                 )
               }
-              className="p-2 border-[#252b61] rounded-lg w-full"
+              className="p-2 border-[#252b61] rounded-lg"
             >
               {hospitals.map((hospital) => (
                 <option key={hospital.id} value={hospital.id}>
@@ -128,7 +128,7 @@ const OPDSQueueModel = () => {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 overflow-x-auto">
         <Card className="bg-white shadow-lg">
           <CardHeader className=" text-[#252b61] rounded-t-lg">
             <CardTitle>Total Patients</CardTitle>
@@ -161,7 +161,7 @@ const OPDSQueueModel = () => {
         </Card>
       </div>
 
-      <Tabs defaultValue="queue" className="mb-8">
+      <Tabs defaultValue="queue" className="mb-8 " >
         <TabsContent value="queue" className="mt-4">
           <Card className="bg-white shadow-lg">
             <CardHeader className="text-[#252b61]">
@@ -189,7 +189,8 @@ const OPDSQueueModel = () => {
             </CardContent>
           </Card>
         </TabsContent>
-        <TabsContent value="details" className="mt-4">
+
+        <TabsContent value="details" className="mt-4 py-4" style={{marginBottom:"5rem"}}>
           <Card className="bg-white shadow-lg">
             <CardHeader>
               <CardTitle>
@@ -197,11 +198,11 @@ const OPDSQueueModel = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
                 {queueData.map((spec) => (
                   <Card key={spec.name} className="bg-gray-50 shadow-md">
                     <CardHeader className="bg-gray-200">
-                      <CardTitle>{spec.name}</CardTitle>
+                      <CardTitle >{spec.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="flex items-center text-gray-800">
@@ -221,7 +222,7 @@ const OPDSQueueModel = () => {
         </TabsContent>
       </Tabs>
 
-      <Card className="bg-white shadow-lg mb-8">
+      <Card className="bg-white shadow-lg mb-8 overflow-x-auto " style={{marginBottom:"5rem",paddingLeft:"3rem",paddingRight:"3rem"}}>
         <CardHeader className="text-[#252b61]">
           <CardTitle>Add Emergency at {selectedHospital.name}</CardTitle>
         </CardHeader>
@@ -230,7 +231,7 @@ const OPDSQueueModel = () => {
             <select
               onChange={(e) => setSelectedSpecialization(e.target.value)}
               value={selectedSpecialization}
-              className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 my-4"
             >
               <option value="" disabled>
                 Select Specialization
