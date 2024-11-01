@@ -101,7 +101,7 @@ const HospitalManagementSystem = () => {
         </Card>
 
         {/* Hospital Table */}
-      <Card className="mb-20 overflow-x-auto ">
+      <Card className="mb-20 overflow-x-auto relative">
         <CardHeader className="text-[#252b61]">
           <CardTitle>Hospital Availability</CardTitle>
         </CardHeader>
@@ -116,15 +116,16 @@ const HospitalManagementSystem = () => {
             </TableHead>
             <TableBody>
               {hospitals.map(hospital => (
-                <TableRow key={hospital.id}>
+                <TableRow key={hospital.id} >
                   <TableCell>{hospital.name}</TableCell>
-                  <TableCell>{hospital.bedsAvailable}</TableCell>
+                  <TableCell className="bg-green-500">{hospital.bedsAvailable}</TableCell>
                   <TableCell>
                     <Dialog
-                      trigger={<Button onClick={() => setSelectedHospital(hospital)} className="text-[#252b61]  font-bold">Book</Button>}
+                      className=""
+                      trigger={<Button onClick={() => setSelectedHospital(hospital)} className="font-bold" style={{backgroundColor:"green",color:"white"}} >Book</Button>}
                       title={`Book a Bed at ${hospital.name}`}
                     >
-                      <div className="grid gap-4 py-4">
+                      <div className="grid gap-4 py-4 absolute">
                         <Input
                           placeholder="Patient Name"
                           value={bookingDetails.name}
@@ -135,7 +136,7 @@ const HospitalManagementSystem = () => {
                           value={bookingDetails.contact}
                           onChange={(e) => setBookingDetails({ ...bookingDetails, contact: e.target.value })}
                         />
-                        <Button onClick={handleBooking} className="bg-[#252b61] text-white">Confirm Booking</Button>
+                        <Button onClick={handleBooking} className="bg-[#252b61] text-white bg-blue-500" style={{backgroundColor:"blue"}}>Confirm Booking</Button>
                       </div>
                     </Dialog>
                   </TableCell>

@@ -17,6 +17,7 @@ import {
 } from "../../components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "../../components/ui/alert";
 import { Button } from "../../components/ui/button";
+import { useMediaQuery } from 'react-responsive';
 
 import { Tabs, TabsContent } from "../../components/ui/tabs";
 
@@ -48,6 +49,8 @@ const generateQueueData = () => {
 };
 
 const OPDSQueueModel = () => {
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const [selectedHospital, setSelectedHospital] = useState(hospitals[0]);
   const [queueData, setQueueData] = useState(generateQueueData());
   const [selectedSpecialization, setSelectedSpecialization] = useState("");
@@ -96,11 +99,13 @@ const OPDSQueueModel = () => {
     queueData.reduce((sum, spec) => sum + spec.avgWaitTime, 0) /
       queueData.length
   );
-
+//paddingLeft:"12rem",paddingRight:"12rem"
   return (
-    <div className="p-6 max-w-screen mx-auto bg-gray-100 min-h-screen pt-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " style={{marginTop:"8rem",marginBottom:"5rem"}}>
+  
+     <div className="max-w-screen bg-gray-100 min-h-screen pt-4   " style={{marginTop:"8rem",marginBottom:"5rem", paddingLeft: isDesktop ? '12rem' : isTablet ? '8rem' : '4rem',
+     paddingRight: isDesktop ? '12rem' : isTablet ? '8rem' : '4rem',}}>
       
-      <Card className="bg-white shadow-lg mb-6">
+      <Card className="bg-white shadow-lg mb-6 ">
         <CardHeader className="text-[#252b61]">
           <CardTitle>Select Hospital</CardTitle>
         </CardHeader>
@@ -128,13 +133,13 @@ const OPDSQueueModel = () => {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 overflow-x-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 overflow-x-auto ">
         <Card className="bg-white shadow-lg">
           <CardHeader className=" text-[#252b61] rounded-t-lg">
             <CardTitle>Total Patients</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
-            <div className="text-5xl font-bold text-center">
+            <div className="text-5xl font-bold py-2 " style={{fontSize:"2.2rem"}}>
               {totalPatients}
             </div>
           </CardContent>
@@ -144,7 +149,7 @@ const OPDSQueueModel = () => {
             <CardTitle>Emergency Cases</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
-            <div className="text-5xl font-bold text-center text-red-600">
+            <div className="text-5xl font-bold  text-red-600 py-2" style={{fontSize:"2.2rem"}}>
               {totalEmergencies}
             </div>
           </CardContent>
@@ -154,7 +159,7 @@ const OPDSQueueModel = () => {
             <CardTitle>Avg. Wait Time</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
-            <div className="text-5xl font-bold text-center">
+            <div className="text-5xl font-bold py-2 " style={{fontSize:"2.2rem"}}>
               {avgWaitTime} min
             </div>
           </CardContent>
@@ -245,8 +250,9 @@ const OPDSQueueModel = () => {
           </div>
           <Button
             onClick={handleEmergency}
-            className="ml-auto bg-blue-500 text-white hover:bg-blue-600 disabled:bg-gray-400"
+            className="ml-auto hover:bg-blue-600 disabled:bg-gray-400 bg-red-500 text-white"
             disabled={!selectedSpecialization || isLoading}
+            style={{backgroundColor:"red"}}
           >
             {isLoading ? (
               <Loader2 className="w-5 h-5 animate-spin" />
@@ -261,7 +267,7 @@ const OPDSQueueModel = () => {
       {alert && (
         <Alert variant="success" className="mt-6">
           <AlertTitle>{alert.title}</AlertTitle>
-          <AlertDescription>{alert.description}</AlertDescription>
+          <AlertDescription >{alert.description}</AlertDescription>
         </Alert>
       )}
     </div>

@@ -20,6 +20,7 @@
     "react-leaflet": "^4.2.1",
     "react-modal-image": "^2.6.0",
     "react-parallax": "^3.5.1",
+    "react-responsive": "^10.0.0",
     "react-router-dom": "^6.20.0",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
